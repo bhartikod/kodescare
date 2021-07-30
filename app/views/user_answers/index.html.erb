@@ -1,0 +1,21 @@
+<center>
+  <%= form_for @user_answer,url: user_answers_path, method: :post  do |f|%><br/><br/>
+  <%=@question.title %>
+  <%@question.options.each do |option|%>
+   <li>
+    <%=f.label option.value do  %>
+      <%= f.radio_button :option_id, option.id, {:item_wrapper_class => 'inline'}%>
+      <%= option.value %>
+    <%end%>
+   </li>
+  <%end%>
+  <%if @step > 0%>
+   <%= link_to 'Back', back_user_answers_path %>
+   <%end%>
+  <% if @is_final_step %>
+    <%=f.submit 'Final Submit'%>
+    <%else%>
+    <%=f.submit 'Next'%>
+  <%end%>
+ <%end%>
+</center>

@@ -1,0 +1,42 @@
+<body>
+  <center>
+  <h3>Let's see how prepared you are to go all in!</h3>
+  <h3>Choose your course</h3>
+  <% @general_information.courses.keys.each do |key|%>
+    <%= hidden_field_tag 'step', 'program'  %>
+    <label class="labl">
+    <%= f.radio_button :course, key, :checked => true %>
+    <div><%= @general_information.courses[key] %></div>
+    </label>
+  <%end%>
+  <h3>Are you able to attend 90% of classes?</h3>
+  <label class="labl">
+    <%= f.radio_button :attend, 'yes' %>
+    <div>YES</div>
+  </label>
+  <label class="labl">
+    <%= f.radio_button :attend, 'no' %>
+    <div>NO</div>
+  </label>
+  <h2>How do you want to class in KodeScare</h2>
+  <label class="labl">
+    <%= f.radio_button :class_type, 'OnLine' %>
+    <div>OnLine</div>
+  </label>
+  <label class="labl">
+    <%= f.radio_button :class_type, 'OffLine' %>
+    <div>OffLine</div>
+  </label>
+  <h3>Do you have access to laptop/desktop for the entire duration of the course?</h3>
+  <label class="labl">
+    <%= f.radio_button :is_laptop, 'yes'%>
+    <div>YES</div>
+  </label>
+
+  <label class="labl">
+    <%= f.radio_button :is_laptop, 'no' %>
+    <div>NO</div>
+  </label>
+  <%= f.hidden_field :step, value: "program"%>
+  </center>
+</body>

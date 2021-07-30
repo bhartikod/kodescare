@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KodesCare</title>
+    <meta name="google-site-verification" content="Rg2Y77XdePS6eUM6jhxlW2eOKp-yc096udStIgh9QCU" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="ROR, Ruby on Raiils, Corporate Training, Web Development Training, ROR Training, Ruby on Rails Training, ROR Training, Industrial Training, Internship" />
+    <meta name="description" content="KodesCare only deal in providing corporate training in Ruby on Rails. They have some different traning structure which includes No theoritical classes, No board classes and No group classes, they only deals with practical work and training. Apart from that, their team only includes IT developer instead of any Faculty/Teacher.">
+
+    <%#= favicon_link_tag 'https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-076570763420/bites-application/assets/fav.ico' %>
+
+    <script type="application/x-javascript">
+      addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+      }, false);
+
+      function hideURLbar() {
+        window.scrollTo(0, 1);
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if current_user %>
+      <div class="timer"></div>
+    <% end %>
+  </head>
+
+  <body>
+    <section class="body_container <%= request.path.eql?('/') ? 'sticky_navigation' : '' %>">
+      <div class="full_bd">
+        <div class="page_body position-relative">
+          <% if request.path.eql?('/') %>
+            <%= render 'header_banner' %>
+          <% end %>
+
+          <% unless (request.path.eql?('/')) %>
+            <%= render partial: 'dashboard/header' %>
+          <% end %>
+
+          <%= yield %>
+
+          <% unless (request.path.eql?('/users/sign_in') ) %>
+            <%= render "dashboard/footer"%>
+          <%end%>
+
+          <!-- # TODO, it must be a partial with proper flash message -->
+          <!-- <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p> -->
+        </div>
+      </div>
+    </section>  
+  </body>
+
+  <script>
+    $('.counter').countUp();
+
+    // $(window).load(function () {
+    //   $('.flexslider').flexslider({
+    //     animation: "slide",
+    //     start: function (slider) {
+    //       $('body').removeClass('loading');
+    //     }
+    //   });
+    // });
+
+    $(function () {
+      $("#slider3").responsiveSlides({
+        auto: true,
+        pager: true,
+        nav: false,
+        speed: 900,
+        reverse: false,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+    });
+
+    jQuery(document).ready(function ($) {
+      $(".scroll").click(function (event) {
+        event.preventDefault();
+        $('html,body').animate({
+          scrollTop: 0
+        }, 1500);
+      });
+    });
+
+    $(document).ready(function () {
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+    });
+    var start = new Date;
+<% if request.path != "/user_answers"%>
+<% session[:timer] = "" %>
+<% end %>
+
+<% if session[:timer].present? %>
+var timer2 = "<%= session[:timer] %>";
+var interval = setInterval(function() {
+
+
+  var timer = timer2.split(':');
+  //by parsing integer, I avoid all extra string processing
+  var minutes = parseInt(timer[0], 10);
+  var seconds = parseInt(timer[1], 10);
+  --seconds;
+  minutes = (seconds < 0) ? --minutes : minutes;
+  seconds = (seconds < 0) ? 59 : seconds;
+  seconds = (seconds < 10) ? '0' + seconds : seconds;
+  //minutes = (minutes < 10) ?  minutes : minutes;
+  $('.timer').html(minutes + ':' + seconds);
+  if (minutes < 0) clearInterval(interval);
+  //check if both minutes and seconds are 0
+  if ((seconds <= 0) && (minutes <= 0)) clearInterval(interval);
+  timer2 = minutes + ':' + seconds;
+  $.ajax({url: "<%= set_timer_path %>?timer="+timer2})
+  if (timer2 == "0:00"){
+    $('form#new_user_answer').submit();
+  }
+}, 1000);
+<% end %>
+  </script>
+</html>
+<%if user_signed_in? %>
+    <span class="pull-right"><%=link_to "Logout", destroy_user_session_path, :method => :delete%></span>
+    <%else%>
+   <br />
+  <%end%>
+
+  

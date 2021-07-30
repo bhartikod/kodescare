@@ -1,0 +1,373 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand logo_img" href="javascript:;">
+      <%=image_tag "logo.png" ,class: "img-fluid" %>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav navbar_menu ml-auto">
+        <li class="nav-item active">
+        <a class="nav-link" href="<%= root_path %>"> Home </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= about_us_path %>"> About Us </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= developers_path %>"> Developer </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= courses_path %>"> Courses </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<%= contact_us_path %>"> Contact Us </a>
+        </li>
+        <li class="nav-item">
+        <a class="btn btn-primary" href="<%= current_user && current_user.general_information ?  new_test_path : general_informations_path  %>"> Apply Now </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navbar close here-->
+<div class="banner">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="slider_text">
+          <h2>No Teacher, only Developers</h2>
+          <p>Only A Real IT Developer Can Provide You Proper Training</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="slider_text">
+          <h2>No boring classes</h2>
+          <p>Here We Only Deal With Practical Work</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="slider_text">
+          <h2>It's never too late to Study</h2>
+          <p>Interviewer Always Seeks For Technical Canndidate</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="slider_text">
+          <h2>The best training institute</h2>
+          <p>Successful Career Starts With Good Training</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--banner div close here-->
+<div class="box about_box mb-5">
+  <div class="container">
+    <div class="page_heading">
+      <h2 class="logo_color text-center">About Us</h2>
+    </div>
+    <div class="about_text text-center">
+      <p>We are a team of highly experienced developers, who have around 6+ years of experience in Ruby on Rails (ROR). We are professionals who are already working in an IT company and we are aware of the actual training process of the corporate world. We are experienced in providing training to freshers in our company and have come up with this idea to provide the same to freshers, who are looking for Job. Find more about <a class='blue', href="javascript:;">Kodescare</a>.</p>
+    </div>
+  </div>
+</div>
+<!--about div close here-->
+<div class="box choose_box mb-5">
+  <div class="container">
+    <div class="page_heading">
+      <h2 class="logo_color text-center">Why to choose Ruby on Rails</h2>
+    </div>
+    <div class="choose_text text-center">
+      <p>Ruby on Rails (ROR) is a web development framework developed in Ruby. It simplifies and abstracts repetitive tasks and aids in speedy application development. It is now one of top Ten in-demand technologies.</p>
+      <p>Today many companies used Ruby, including Twitter, CNET, BBC, Amazon, NASA, Yahoo and JP Morgan due to its simplicity (programming-friendly language), agility, elegance, and speed. While talking about the job growth trends, the ROR developers are now a very hot commodity. With the major players like Salesforce.com, HP, and VMware making the important moves in the industry emphasizing Ruby as the major language of the cloud. The growing demand for ROR has now emphasized the need for skilled programmers.</p>
+      <p>Few of the top giants of ROR are Airbnb, Groupon, Github, Couchsurfing, Shopify, Ask.fm, Dribbble and Twitter.</p>
+    </div>
+  </div>
+</div>
+<!--choose div close here-->
+<div class="box traning_box mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 flex">
+        <div class="trn_box trn_box1">
+          <div class="box-item">
+            <div class="flip-box">
+              <div class="flip-box-front text-center">
+                <div class="inner color-white">
+                  <h3 class="flip-box-header">Daily Life Of Student At Training Institute</h3>
+                </div>
+              </div>
+              <div class="flip-box-back text-center">
+                <div class="inner color-white">
+                <p>We offer a great variety of individual and group programs. Our client's and our experience proves that the following courses</p>
+                  <ul class="list-unstyled">
+                    <li>Individual Training</li>
+                    <li>6 Hours Daily Classes</li>
+                    <li>Practical Tasks Only</li>
+                    <li>Daily Task Assignment</li>
+                    <li>Individual Doubt Clearing Session</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 flex">
+        <div class="trn_box trn_box2">
+          <div class="box-item">
+            <div class="flip-box">
+              <div class="flip-box-front text-center">
+                <div class="inner color-white">
+                  <h3 class="flip-box-header">Benifits</h3>
+                  <p>During Training</p>
+                </div>
+              </div>
+              <div class="flip-box-back text-center">
+                <div class="inner color-white">
+                  <ul>
+                    <li>You will work on projects which are almost similar to the live projects.</li>
+                    <li>You will be assigned with assessment task, which is required to complete under the real deadline and work pressure.</li>
+                    <li>You will get work environment similar to an IT company.</li>
+                    <li>For more real IT environment, you will be assigned with tasks to complete in group.</li>
+                  </ul>
+                  <button class="flip-box-button">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12 flex">
+        <div class="trn_box trn_box3">
+          <div class="box-item">
+            <div class="flip-box">
+              <div class="flip-box-front text-center">
+                <div class="inner color-white">
+                  <h3 class="flip-box-header">Benifits</h3>
+                  <p>After Training</p>
+                </div>
+              </div>
+              <div class="flip-box-back text-center">
+                <div class="inner color-white">
+                  <ul>
+                    <li>You will get upto 30 days doubt clearing session.</li>
+                    <li>We will provide you interview questions based on ROR.</li>
+                  </ul>
+                  <button class="flip-box-button">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Training box close here-->
+<div class="box career_box mb-5">
+  <div class="container">
+    <div class="page_heading">
+      <h2 class="logo_color text-center">Career</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 flex">
+        <div class="career_img">
+          <%= image_tag "career.jpg" ,class: "img-fluid"%>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="career_text">
+          <ul class="list-unstyled">
+            <li><span> <i class="fas fa-location-arrow"></i></span>
+              <p>You have skills which others don't have</p>
+            </li>
+            <li><span> <i class="fas fa-location-arrow"></i></span>
+              <p>You have knowledge about the technology on which company deals, which is a advantage for you</p>
+            </li>
+            <li><span> <i class="fas fa-location-arrow"></i></span>
+              <p>Company prefers to hire a candidate who is already aware of there technology</p>
+            </li>
+            <li><span> <i class="fas fa-location-arrow"></i></span>
+              <p>Corporate Training is an advantage for both you and company, as because of your skills company doesn't need to provide you training</p>
+            </li>
+            <li><span> <i class="fas fa-location-arrow"></i></span>
+              <p>With corporate training and your awareness about the technology, company can assign or bring you on project ASAP</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--all button close here-->
+<div class="box student_box mb-5">
+  <div class="container">
+    <div class="page_heading">
+      <h2 class="logo_color text-center">Student Say</h2>
+    </div>
+    <div class="student_slider">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="std_box">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            <div class="std_foot">
+              <div class="std_ft_img">
+              <%= image_tag "user.png"%>
+              </div>
+              <h5>Amit</h5>
+              <h6>Placed in Yuvasoft Solutions</h6>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="std_box">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            <div class="std_foot">
+              <div class="std_ft_img">
+              <%= image_tag "user.png"%>
+              </div>
+              <h5>Ankit</h5>
+              <h6>Placed in an IT company of Mumbai</h6>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="std_box">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            <div class="std_foot">
+              <div class="std_ft_img">
+              <%= image_tag "user.png"%>
+              </div>
+              <h5>Sweta</h5>
+              <h6>Done Internship</h6>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="std_box">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            <div class="std_foot">
+              <div class="std_ft_img">
+              <%= image_tag "user.png"%>
+              </div>
+              <h5>Zainab</h5>
+              <h6>Done Internship</h6>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="std_box">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            <div class="std_foot">
+              <div class="std_ft_img">
+              <%= image_tag "user.png"%>
+              </div>
+              <h5>Rahul</h5>
+              <h6>Placed in Kliftox Technology</h6>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="std_box">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            <div class="std_foot">
+              <div class="std_ft_img">
+              <%= image_tag "user.png"%>
+              </div>
+              <h5>Dolly</h5>
+              <h6>Placed in Kliftox Technology</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--student div close here-->
+<div class="box course_box mb-5">
+  <div class="container">
+    <div class="page_heading">
+      <h2 class="logo_color text-center">Choose Your Course</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
+        <div class="course_text text-center">
+          <p>
+            We have multiple courses, but for now we have IT techs who are specialized in Ruby on Rails and Web Designing.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 flex">
+        <div class="chs_course_box text-center text-white">
+          <a href="javascript:;">
+            <%= image_tag "ror.png" ,class: "curs_img" %>
+            <h3>RoR Development</h3>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+               <%=image_tag "database.png" %>
+              </li>
+              <li class="list-inline-item">
+                <%=image_tag "bug.png" %>
+              </li>
+              <li class="list-inline-item">
+                <%=image_tag "js.png" %>
+              </li>
+            </ul>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 flex">
+        <div class="chs_course_box text-center text-white">
+          <a href="javascript:;">
+            <%= image_tag "web_design.png" ,class: "curs_img" %>
+            <h3>Web Designing</h3>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <%=image_tag "html.png" %>
+              </li>
+              <li class="list-inline-item">
+                <%= image_tag "css.png" %>
+              </li>
+              <li class="list-inline-item">
+                 <%=image_tag "js.png" %>
+              </li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--course box div close here-->
+<div class="box contact_box mb-5">
+  <div class="container">
+    <div class="page_heading">
+      <h2 class="logo_color text-center">Contact Us</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex">
+        <div class="cont_box">
+          <div class="cont_left"><i class="fas fa-phone-alt"></i></div>
+          <div class="cont_right">+91-9977450900</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex">
+        <div class="cont_box">
+          <div class="cont_left"><i class="fas fa-envelope"></i></div>
+          <div class="cont_right">info@kodescare.com</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex">
+        <div class="cont_box">
+          <div class="cont_left"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="cont_right">M-14, Sai Ram Plaza, 63 Mangal Nagar Road, Bhawarkua, Indore</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

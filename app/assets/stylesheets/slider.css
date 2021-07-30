@@ -1,0 +1,511 @@
+
+
+/*--banner Slider --*/
+
+
+/*-- Slider --*/
+
+.w3-oneimg {
+  background: url(slid-1.jpg)no-repeat 0px 0px;
+}
+
+.w3-twoimg {
+  background: url(slid-2.jpg)no-repeat 0px 0px;
+}
+
+.w3-threeimg {
+  background: url(slid-3.jpg)no-repeat 0px 0px;
+}
+
+.w3-fourimg {
+  background: url(slid-4.jpg)no-repeat 0px 0px;
+}
+
+a.blue {
+  color: #0d6efd !important;
+  text-decoration: none;
+}
+
+.body_container{
+ padding-left: 0px;
+ padding-right: 0px;
+}
+
+.w3-oneimg,
+.w3-twoimg,
+.w3-threeimg,
+.w3-fourimg {
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  min-height: 800px;
+}
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+
+
+/*-- //banner Slider --*/
+
+.rslides {
+  margin: 0 auto 40px;
+}
+
+#slider2,
+#slider3 {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  margin: 0 auto;
+}
+
+.rslides_tabs {
+  list-style: none;
+  padding: 0;
+  background: rgba(0, 0, 0, .25);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .3), inset 0 0 5px rgba(0, 0, 0, 1.0);
+  -moz-box-shadow: 0 0 1px rgba(255, 255, 255, .3), inset 0 0 5px rgba(0, 0, 0, 1.0);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .3), inset 0 0 5px rgba(0, 0, 0, 1.0);
+  font-size: 18px;
+  list-style: none;
+  margin: 0 auto 50px;
+  max-width: 540px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.rslides_tabs li {
+  display: inline;
+  float: none;
+  margin-right: 1px;
+}
+
+.rslides_tabs a {
+  width: auto;
+  line-height: 20px;
+  padding: 9px 20px;
+  height: auto;
+  background: transparent;
+  display: inline;
+}
+
+.rslides_tabs li:first-child {
+  margin-left: 0;
+}
+
+.rslides_tabs .rslides_here a {
+  background: rgba(255, 255, 255, .1);
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.new_user  a {
+  color: blue !important;
+}
+/* Callback example */
+
+
+/*.events {
+  list-style: none;
+  }*/
+
+.callbacks_container {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.callbacks {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.callbacks li {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.callbacks img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: auto;
+  width: 100%;
+  border: 0;
+}
+
+
+/*.callbacks .caption {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  text-shadow: none;
+  color: #fff;
+  background: #000;
+  background: rgba(0,0,0, .8);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 20px;
+  margin: 0;
+  max-width: none;
+  }*/
+
+.slider-info {
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+  z-index: 999;
+  text-align: left;
+  margin-top: 22em;
+}
+
+.slider-info h4 {
+  font-weight: 600;
+  color: #fff;
+  font-size: 4em;
+  letter-spacing: 3px;
+}
+
+.slider-info p {
+  font-size: 25px;
+  letter-spacing: 4px;
+  padding: 16px 0px;
+  color: #fff;
+}
+
+.w3layouts_more-buttn a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 2px;
+  background-color: rgb(44, 190, 255);
+  outline: none;
+  padding: 10px 22px;
+  border: 2px solid rgb(44, 190, 255);
+}
+
+.w3layouts_more-buttn a:hover {
+  background: #fff;
+  color: #000;
+}
+
+span.home-banner {
+  color: rgb(44, 190, 255);
+  font-weight: 100;
+}
+
+.callbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  top: 52%;
+  left: 0;
+  opacity: 0.7;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 53px;
+  width: 53px;
+  background: rgba(230, 230, 230, 0) url("../images/left-arrow.png") no-repeat left top;
+  margin-top: -45px;
+}
+
+.callbacks_nav:active {
+  opacity: 1.0;
+}
+
+.callbacks_nav.next {
+  left: auto;
+  background: rgba(230, 230, 230, 0) url("../images/right-arrow.png") no-repeat 0px 0px;
+  background-position: right top;
+  right: 0;
+}
+
+
+/*--responsive--*/
+
+@media(max-width:1440px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 729px;
+  }
+}
+
+@media(max-width:1366px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 655px;
+  }
+  .slider-info {
+    margin-top: 19em;
+  }
+}
+
+@media(max-width:1280px) {
+  .slider-info h4 {
+    font-size: 3em;
+  }
+  .about,
+  .services,
+  .contact,
+  .team,
+  .testimonials,
+  .gallery,
+  .blog {
+    padding: 4em 0;
+  }
+  .title {
+    margin-bottom: 33px;
+  }
+  .slider-info {
+    padding-left: 30px;
+  }
+}
+
+@media(max-width:1080px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 578px;
+  }
+  .slider-info {
+    margin-top: 16em;
+  }
+  h1 a.navbar-brand {
+    font-size: 52px;
+  }
+  .slider-info h4 {
+    font-size: 3em;
+  }
+  .banner-agileits-btm {
+    min-height: 459px;
+  }
+}
+
+@media(max-width:1024px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 554px;
+  }
+  .slider-info h4 {
+    font-size: 3.2em;
+  }
+  .slider-info p {
+    font-size: 22px;
+    padding: 14px 0px;
+  }
+}
+
+@media(max-width:900px) {
+  .slider-info h4 {
+    font-size: 2.7em;
+  }
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 522px;
+  }
+  .slider-info {
+    margin-top: 15em;
+  }
+  .slider-info p {
+    font-size: 19px;
+  }
+}
+
+@media(max-width:800px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 495px;
+  }
+  .callbacks_nav {
+    top: 56%
+  }
+}
+
+@media(max-width:736px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 457px;
+  }
+  .slider-info h4 {
+    font-size: 2em;
+  }
+  .w3layouts_more-buttn a {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+  .slider-info {
+    margin-top: 13em;
+  }
+  .slider-info {
+    text-align: center;
+  }
+}
+
+@media(max-width:667px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 443px;
+  }
+  .its-banner-grid {
+    width: 100%;
+  }
+  .its-banner-grid:nth-child(2),
+  .its-banner-grid:nth-child(3),
+  .its-banner-grid:nth-child(4) {
+    margin-top: 19px;
+  }
+}
+
+@media(max-width:640px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 428px;
+  }
+  .slider-info h4 {
+    font-size: 2.7em;
+  }
+  .slider-info p {
+    font-size: 17px;
+  }
+}
+
+@media(max-width:568px) {
+  h1 a.navbar-brand {
+    font-size: 34px;
+  }
+  .slider-info h4 {
+    font-size: 2.4em;
+  }
+  .slider-info p {
+    padding: 12px 0px;
+  }
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg {
+    min-height: 411px;
+  }
+  .about-top-grid p {
+    font-size: 14px;
+  }
+  .stats-grid h4 {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 44px;
+  }
+  .team-details {
+    top: 29%;
+  }
+}
+
+@media(max-width:480px) {
+  .slider-info h4 {
+    font-size: 2em;
+  }
+  .slider-info p {
+    letter-spacing: 2px;
+  }
+}
+
+@media(max-width:440px) {
+  .callbacks_nav.next,
+  .callbacks1_nav.prev {
+    background-size: 30px;
+  }
+  .slider-info p {
+    font-size: 15px;
+  }
+  .slider-info h4 {
+    font-size: 1.6em;
+  }
+}
+
+@media(max-width:414px) {
+  .banner-agileits-btm {
+    margin: 27px 0px 0px;
+    min-height: 327px;
+  }
+}
+
+@media(max-width:384px) {
+  .w3-oneimg,
+  .w3-twoimg,
+  .w3-threeimg,
+  .w3-fourimg {
+    min-height: 376px;
+  }
+}
+
+@media(max-width:320px) {
+  .slider-info h4 {
+    letter-spacing: 4px;
+    line-height: 28px;
+  }
+  .slider-info {
+    margin-top: 11em;
+  }
+}
+
+
+/*--//responsive--*/

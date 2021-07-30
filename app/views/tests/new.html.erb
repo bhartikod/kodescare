@@ -1,0 +1,10 @@
+<% if @invalid_test %>
+  <p>You have already submitted test you need to 90 days after test submission</p>
+  <%else%>
+<center></br>
+  <h1>Kodescare School Test</h1>
+    <%=form_for @test do |f| %><br/>
+    <%= f.submit 'Start Test' %>
+  <%end%>
+ </center>
+<%end%>

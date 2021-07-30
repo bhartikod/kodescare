@@ -1,0 +1,32 @@
+ <h2>Let's see how prepared you are to go all in!</h2>
+  <%= hidden_field_tag 'step', 'info'  %>
+  <h3>Date of Birth</h3>
+  <div class="field">
+    <%= f.text_field :dob %>
+   </div><br/>
+  <h2>Gender</h2>
+    <label class="labl">
+    <%= f.select :gender, ['Male', 'Female', 'Other'], prompt: 'Select Gender' %>
+  </label><br/>
+  <h2>12th Passing / Graduation Year</h2>
+   <label class="labl">
+    <%= f.select :graduation_year, ['2010', '2011', '2212', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2023'] , prompt: 'Select' %>
+  </label><br/>
+  <h2>Do you plan to look for full-time work immediately after Kodescare?</h2>
+  <label class="labl">
+   <%= f.radio_button :full_time_work, 'yes'%>
+   <div>YES</div>
+  </label>
+  <label class="labl">
+   <%= f.radio_button :full_time_work, 'no' %>
+   <div>NO</div>
+  </label>
+  <h2>How did you hear of KodeScare?</h2>
+  <label class="labl">
+    <%= f.select :how_hear, ['Facebook', 'Google', 'Instagram', 'YouTube', 'Newspaper', 'Online Article', 'Friend/Family', 'Others', 'None'], prompt: 'Select' %>
+    <%= f.hidden_field :step, value: "info"%>
+  </label>
+
+  <script >
+    $('#general_information_dob').datepicker()
+   </script>

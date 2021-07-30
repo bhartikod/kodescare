@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+  port: 5432
+  host: localhost
+  username: postgres
+  password: 12345678
+
+development:
+  <<: *default
+  database: training_development
+
+production:
+  <<: *default
+  database: training_production
+  username: training
+  password: <%= ENV['TRAINING_DATABASE_PASSWORD'] %>

@@ -1,0 +1,9 @@
+<body>
+ <center>
+  <%= form_for @general_information do |f| %>
+    <%= render "#{@general_information.current_step }_step", :f => f %>
+    <p><%= f.submit "Continue" %></p>
+    <p><%= f.submit "Back", :name => "back_button" unless @general_information.first_step? %></p>
+  <% end %>
+ </center>
+</body>

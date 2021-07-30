@@ -1,0 +1,58 @@
+<div class="page_nav_sticky h-116">
+  <div class="page_body position-relative">
+    <div class="page_nav_sticky">
+      <div class="sticky_navigation_wrapper">
+        <div class="sticky_navigation bg-white-h-100">
+          <nav class="navbar navbar-expand-lg page_nav">
+            <div class="container-fluid">
+              <a class="navbar-brand logo_img" href="javascript:;">
+                <%=image_tag "logo.png" ,class: "img-fluid"%>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar_menu ml-auto">
+                <%if request.path != new_test_path%>
+                 <%if request.path != general_informations_path %>
+                   <%if request.path != user_answers_path%>
+                   <%if request.path != test_path(:id)%>
+                    <li class="nav-item <%= get_active_class('home') %>">
+                      <a class="nav-link" href="<%= root_path %>"> Home </a>
+                    </li>
+                    <li class="nav-item  <%= get_active_class('about_us')%>">
+                      <a class="nav-link" href="<%= about_us_path %>"> About Us </a>
+                    </li>
+                    <li class="nav-item <%= get_active_class('stacks')%>">
+                      <a class="nav-link" href="<%= stacks_path %>"> Stacks </a>
+                    </li>
+                    <li class="nav-item <%= get_active_class('courses')%>">
+                      <a class="nav-link" href="<%= courses_path %>"> Course </a>
+                    </li>
+                    <li class="nav-item <%= get_active_class('developers')%>">
+                      <a class="nav-link" href="<%= developers_path %>"> Developers </a>
+                    </li>
+                    <li class="nav-item <%= get_active_class('contact_us')%>">
+                      <a class="nav-link" href="<%= contact_us_path %>"> Contact Us </a>
+                    </li>
+                    <li class="nav-item <%= get_active_class('general_informations')%>">
+           <a class="btn btn-primary" href="<%= current_user && current_user.general_information ?  new_test_path : general_informations_path  %>"> Apply Now </a>
+                    </li>
+                    <% end %>
+                   <% end %>
+                  <% end %> 
+                <% end %>
+                 <% if user_signed_in? %>
+                    <%= current_user.name %><br/>
+                    <% else %>
+                    <%= link_to "Sign In", new_user_session_path %><br />
+                 <% end %>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

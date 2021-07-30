@@ -1,0 +1,45 @@
+<div class="footer_box mt-5 mb-5 pt-3 pb-5">
+<div class="container">
+  <div class="row">
+     <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-12">
+        <div class="foot_box text-center">
+         <h2>Kodescare</h2>
+      <%if request.path != general_informations_path %>
+        <%if request.path != new_test_path%>
+         <%if request.path != user_answers_path%>
+          <%if request.path != test_path(:id) %>
+         <ul class="list-inline">
+            <li class="list-inline-item">
+               <a href="<%= root_path %>"></i> Home</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="<%= about_us_path %>">About Us</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="<%= developers_path %>">Developer</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="<%= courses_path %>">Course</a>
+            </li>
+         </ul>
+         <ul class="list-inline">
+            <li class="list-inline-item">
+               <a href="javascript:;">Help</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="javascript:;">Privacy</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="<%= contact_us_path %>">Contact Us</a>
+            </li>
+            <%end%>
+            <%end%>
+            <%end%>
+            <%end%>
+           </ul>
+        </div>
+     </div>
+  </div>
+</div>
+</div>
+<!--Footer div close here-->

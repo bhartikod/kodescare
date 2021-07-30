@@ -1,0 +1,10 @@
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-rails
+
+Documentation:
+    Enabled: false
+AllCops:
+    SuggestExtensions: false
+    NewCops: disable
+    
