@@ -1,6 +1,6 @@
 .os-phrases {
   position: relative;
-  margin-top: 15px;
+  margin-top: -11px;
   height: 150px;
 }
 
@@ -21,14 +21,14 @@
 
 .kdsc3,
 .kdsc3 span {
-  font-size: 31px !important;
+  font-size: 25px !important;
   line-height: 31px;
 }
 
 .kdsc4,
 .kdsc4 span {
-  font-size: 150px !important;
-  line-height: 150px;
+  font-size: 120px !important;
+  line-height: 120px;
 }
 
 .kdsc5,
