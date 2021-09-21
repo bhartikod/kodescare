@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name id_proof contact_num verification_code general_information_id select_id_proof enter_id_number document_link])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: %i[name id_proof contact_num verification_code general_information_id select_id_proof enter_id_number
+                                               document_link])
   end
 
   # This method call for vaildate test if present?

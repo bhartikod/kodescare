@@ -15,6 +15,9 @@
         <li class="nav-item">
         <a class="nav-link" href="<%= about_us_path %>"> About Us </a>
         </li>
+        <li class="nav-item <%= get_active_class('stacks')%>">
+          <a class="nav-link" href="<%= stacks_path %>"> Stacks </a>
+        </li>
         <li class="nav-item">
         <a class="nav-link" href="<%= developers_path %>"> Developer </a>
         </li>
@@ -27,12 +30,12 @@
         <li class="nav-item">
           <% if user_signed_in? %>
             <%= current_user.name %><br/>
-            <% else %>
-            <%= link_to "Sign In", new_user_session_path %><br />
+          <% else %>
+            <a class="nav-link" href="<%= new_user_session_path %>"> Sign In </a>
           <% end %>
         </li>
         <li class="nav-item">
-        <a class="btn btn-primary" href="<%= current_user && current_user.general_information ?  new_test_path : general_informations_path  %>"> Apply Now </a>
+        <a class="nav-link" href="<%= current_user && current_user.general_information ?  new_test_path : general_informations_path  %>"> Apply Now </a>
         </li>
       </ul>
     </div>
@@ -45,26 +48,34 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="slider_text">
-          <h2>No Teacher, only Developers</h2>
-          <p>Only A Real IT Developer Can Provide You Proper Training</p>
+          <h2>No Teachers, Only Developers</h4>
+          <p>An Experienced IT developer can provide you proper training</p>
+          <!-- <h2>No Teacher, only Developers</h2>
+          <p>Only A Real IT Developer Can Provide You Proper Training</p> -->
         </div>
       </div>
       <div class="carousel-item">
         <div class="slider_text">
-          <h2>No boring classes</h2>
-          <p>Here We Only Deal With Practical Work</p>
+          <h2>No Boring Classes</h4>
+          <p>Only Practical work to get real work experience </p>
+          <!-- <h2>No boring classes</h2>
+          <p>Here We Only Deal With Practical Work</p> -->
         </div>
       </div>
       <div class="carousel-item">
         <div class="slider_text">
-          <h2>It's never too late to Study</h2>
-          <p>Interviewer Always Seeks For Technical Canndidate</p>
+          <h2>It's never too late to Learn</h4>
+          <p>Interviewer always seeks for technical candidate</p>
+          <!-- <h2>It's never too late to Study</h2> -->
+          <!-- <p>Interviewer Always Seeks For Technical Canndidate</p> -->
         </div>
       </div>
       <div class="carousel-item">
         <div class="slider_text">
-          <h2>The best training institute</h2>
-          <p>Successful Career Starts With Good Training</p>
+          <h2>The Best Training Institute</h4>
+          <p>Good training empowers you and your career</p>
+          <!-- <h2>The best training institute</h2>
+          <p>Successful Career Starts With Good Training</p> -->
         </div>
       </div>
     </div>
@@ -78,20 +89,52 @@
       <h2 class="logo_color text-center">About Us</h2>
     </div>
     <div class="about_text text-center">
-      <p>We are a team of highly experienced developers, who have around 6+ years of experience in Ruby on Rails (ROR). We are professionals who are already working in an IT company and we are aware of the actual training process of the corporate world. We are experienced in providing training to freshers in our company and have come up with this idea to provide the same to freshers, who are looking for Job. Find more about <a class='blue', href="javascript:;">Kodescare</a>.</p>
+      <p>We are a team of highly experienced developers in Ruby on Rails(ROR). We are professionals who are already working in an IT Company and are aware of the actual training process of the corporate world. We are experienced in providing training to freshers in our company and have come up with this idea to provide the same to freshers who are seeking for jobs. Something more about  <a href="#" data-toggle="modal" data-target="#corporate_training" class="modal-link"> KodesCare</a></p>
     </div>
+    <!-- Modal -->
+<div id="corporate_training" class="modal fade" role="dialog" data-backdrop="static">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Adroit Corporate Training, how I come up with this training classes? it's a short story based on some real facts.
+        </p>
+        <br>
+        <p>
+          Let me introduce my self, I'm a Sr. ROR developer in one of the IT company located in Indore(M.P.). During the hiring process in our company, I've taken so many interviews of candidates for their technical round. 80% of the candidates mention in their resume, that they have taken certain training from XYZ classes, which was of duration 2,3 or even of 6 months. If anyone adds in their resume that they have already taken some training, our expectation increases from them. But I always start with the basic technical questions related to their course and training which they have taken.
+        </p>
+        <br>
+        <p>
+          But, I found that 80% of students who have taken training don't have basic knowledge about the language/course they have done in classes. And come out with a similar type of reason that they have not done or not get proper practical training.
+        </p>
+        <br>
+        <p>
+          To me, one thing is very clear that without practical work/tasks no one can understand the proper working flow of any language. Only theoretical classes don't provide you deep understanding of the workflow. But when you start work on the things practically you will get lot's of issues wand, during resolving those issues, you will learn new things on your own and that's how work goes on in an IT company, by resolving the things practically not theoretically.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   </div>
 </div>
 <!--about div close here-->
 <div class="box choose_box mb-5">
   <div class="container">
     <div class="page_heading">
-      <h2 class="logo_color text-center">Why to choose Ruby on Rails</h2>
+      <h2 class="logo_color text-center">Why choose us?</h2>
     </div>
     <div class="choose_text text-center">
-      <p>Ruby on Rails (ROR) is a web development framework developed in Ruby. It simplifies and abstracts repetitive tasks and aids in speedy application development. It is now one of top Ten in-demand technologies.</p>
-      <p>Today many companies used Ruby, including Twitter, CNET, BBC, Amazon, NASA, Yahoo and JP Morgan due to its simplicity (programming-friendly language), agility, elegance, and speed. While talking about the job growth trends, the ROR developers are now a very hot commodity. With the major players like Salesforce.com, HP, and VMware making the important moves in the industry emphasizing Ruby as the major language of the cloud. The growing demand for ROR has now emphasized the need for skilled programmers.</p>
-      <p>Few of the top giants of ROR are Airbnb, Groupon, Github, Couchsurfing, Shopify, Ask.fm, Dribbble and Twitter.</p>
+      <p>We only provide corporate training in Ruby on Rails(ROR). We are committed to helping our freshers to reach their goals, and providing an innovative environment.You can easily compare us by getting practical knowledge with other institutes who will give you theoretical knowledge. We has adopted the progressive approach to technology and lay special focus on our training techniques.
+      </p>
+      <p>As a consequence, we strive to deliver the hands-on experience which we acquire from our projects. We help you manage projects and build confidence in your technology career. Here you can acquire experience & sharpen your skills amidst your training.</p>
+      <p>Now ball is in your court!</p>
     </div>
   </div>
 </div>
@@ -105,19 +148,19 @@
             <div class="flip-box">
               <div class="flip-box-front text-center">
                 <div class="inner color-white">
-                  <h3 class="flip-box-header">Daily Life Of Student At Training Institute</h3>
+                  <h3 class="flip-box-header">Benefits</h3>
+                  <p>of RoR</p>
                 </div>
               </div>
               <div class="flip-box-back text-center">
                 <div class="inner color-white">
-                <p>We offer a great variety of individual and group programs. Our client's and our experience proves that the following courses</p>
-                  <ul class="list-unstyled">
-                    <li>Individual Training</li>
-                    <li>6 Hours Daily Classes</li>
-                    <li>Practical Tasks Only</li>
-                    <li>Daily Task Assignment</li>
-                    <li>Individual Doubt Clearing Session</li>
+                  <ul>
+                <li>RoR teams build applications 30–40% faster than teams using other frameworks.</li>
+                    <li>RoR community supports number of gems which solves real-time problems.</li>
+                    <li>Top websites who have used ruby on rails framework-- GitHub, AirBnB, Shopify, Twitter many more..</li>
+                    <li> On job portals, it is the top most demanded programming languages. </li>
                   </ul>
+                
                 </div>
               </div>
             </div>
@@ -130,7 +173,7 @@
             <div class="flip-box">
               <div class="flip-box-front text-center">
                 <div class="inner color-white">
-                  <h3 class="flip-box-header">Benifits</h3>
+                  <h3 class="flip-box-header">Benefits</h3>
                   <p>During Training</p>
                 </div>
               </div>
@@ -138,11 +181,10 @@
                 <div class="inner color-white">
                   <ul>
                     <li>You will work on projects which are almost similar to the live projects.</li>
-                    <li>You will be assigned with assessment task, which is required to complete under the real deadline and work pressure.</li>
+                    <li>You will Get training from highly experienced developer to learn and earn</li>
                     <li>You will get work environment similar to an IT company.</li>
-                    <li>For more real IT environment, you will be assigned with tasks to complete in group.</li>
+                    <li>You will be assigned with tasks to complete in group which will help you to become Full Stack Web Developer </li>
                   </ul>
-                  <button class="flip-box-button">Learn More</button>
                 </div>
               </div>
             </div>
@@ -155,7 +197,7 @@
             <div class="flip-box">
               <div class="flip-box-front text-center">
                 <div class="inner color-white">
-                  <h3 class="flip-box-header">Benifits</h3>
+                  <h3 class="flip-box-header">Benefits</h3>
                   <p>After Training</p>
                 </div>
               </div>
@@ -164,8 +206,9 @@
                   <ul>
                     <li>You will get upto 30 days doubt clearing session.</li>
                     <li>We will provide you interview questions based on ROR.</li>
+                    <li>Update your Resume by adding new skills as well as demo projects details.</li>
+
                   </ul>
-                  <button class="flip-box-button">Learn More</button>
                 </div>
               </div>
             </div>
@@ -191,20 +234,22 @@
         <div class="career_text">
           <ul class="list-unstyled">
             <li><span> <i class="fas fa-location-arrow"></i></span>
-              <p>You have skills which others don't have</p>
+              <p>We are seeking an employee who will view job as an opportunity to advance their career (who may be you).
+              </p>
+            </li>  
+            <li><span> <i class="fas fa-location-arrow"></i></span>
+              <p>We prefer to hire a tech-savvy candidate who is already aware of technology (who can be you).</p>
             </li>
             <li><span> <i class="fas fa-location-arrow"></i></span>
-              <p>You have knowledge about the technology on which company deals, which is a advantage for you</p>
+              <p>We are providing Corporate Training to understand the workflow of real projects (which is an advantage).</p>
             </li>
             <li><span> <i class="fas fa-location-arrow"></i></span>
-              <p>Company prefers to hire a candidate who is already aware of there technology</p>
+              <p>After training, for dedicate candidate , we will give plenty of opportunities (which you should grab).</p>
             </li>
-            <li><span> <i class="fas fa-location-arrow"></i></span>
-              <p>Corporate Training is an advantage for both you and company, as because of your skills company doesn't need to provide you training</p>
+             <li><span> <i class="fas fa-location-arrow"></i></span>
+              <p>Get training from experienced professionals, start your career and earn along with us (So Apply Now).</p>
             </li>
-            <li><span> <i class="fas fa-location-arrow"></i></span>
-              <p>With corporate training and your awareness about the technology, company can assign or bring you on project ASAP</p>
-            </li>
+
           </ul>
         </div>
       </div>
@@ -304,9 +349,9 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
         <div class="course_text text-center">
-          <p>
+         <!--  <p>
             We have multiple courses, but for now we have IT techs who are specialized in Ruby on Rails and Web Designing.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
@@ -378,5 +423,6 @@
         </div>
       </div>
     </div>
+    <a href="#">top</a>
   </div>
 </div>
