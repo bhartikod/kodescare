@@ -128,7 +128,8 @@
 <div class="box choose_box mb-5">
   <div class="container">
     <div class="page_heading">
-      <h2 class="logo_color text-center">Why choose us?</h2>
+      <h2 class="logo_color text-center">Why KodesCare?</h2>
+        <h5 class="logo_color text-center">Real World Training Along With Real world Developers</h5>
     </div>
     <div class="choose_text text-center">
       <p>We only provide corporate training in Ruby on Rails(ROR). We are committed to helping our freshers to reach their goals, and providing an innovative environment.You can easily compare us by getting practical knowledge with other institutes who will give you theoretical knowledge. We has adopted the progressive approach to technology and lay special focus on our training techniques.
@@ -141,6 +142,10 @@
 <!--choose div close here-->
 <div class="box traning_box mb-5">
   <div class="container">
+    <div class="page_heading">
+      <h2 class="logo_color text-center">How KodesCare benefit you?</h2>
+      <h5 class="logo_color text-center">Get a skill, Get a job, Get ahead</h5>
+    </div>
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-6 col-12 flex">
         <div class="trn_box trn_box1">
@@ -155,10 +160,10 @@
               <div class="flip-box-back text-center">
                 <div class="inner color-white">
                   <ul>
-                <li>RoR teams build applications 30–40% faster than teams using other frameworks.</li>
-                    <li>RoR community supports number of gems which solves real-time problems.</li>
-                    <li>Top websites who have used ruby on rails framework-- GitHub, AirBnB, Shopify, Twitter many more..</li>
-                    <li> On job portals, it is the top most demanded programming languages. </li>
+                <li><span class="fa fa-circle-o" aria-hidden="false"></span>RoR teams build applications 30–40% faster than teams using other frameworks.</li>
+                    <li><span class="fa fa-circle-o" aria-hidden="true"></span>RoR community supports number of gems which solves real-time problems.</li>
+                    <li><span class="fa fa-circle-o" aria-hidden="true"></span>Top websites who have used ruby on rails framework-- GitHub, AirBnB, Shopify, Twitter many more..</li>
+                    <li><span class="fa fa-circle-o" aria-hidden="true"></span> On job portals, it is the top most demanded programming languages. </li>
                   </ul>
                 
                 </div>
@@ -222,7 +227,9 @@
 <div class="box career_box mb-5">
   <div class="container">
     <div class="page_heading">
-      <h2 class="logo_color text-center">Career</h2>
+      <h2 class="logo_color text-center">Start Your Career Journey With Us
+</h2>
+<h5 class="logo_color text-center">take the step,we’ll lead you forward</h5>
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-12 flex">
@@ -260,7 +267,7 @@
 <div class="box student_box mb-5">
   <div class="container">
     <div class="page_heading">
-      <h2 class="logo_color text-center">Student Say</h2>
+      <h2 class="logo_color text-center">Students Say</h2>
     </div>
     <div class="student_slider">
       <div class="owl-carousel owl-theme">
@@ -344,7 +351,9 @@
 <div class="box course_box mb-5">
   <div class="container">
     <div class="page_heading">
-      <h2 class="logo_color text-center">Choose Your Course</h2>
+      <h2 class="logo_color text-center">Choose</h2>
+      <h5 class="logo_color text-center"> Learn new skills, pursue your interests or advance your career with our short online courses.
+</h5>
     </div>
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
@@ -358,7 +367,7 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-12 flex">
         <div class="chs_course_box text-center text-white">
-          <a href="javascript:;">
+          <a href="<%= courses_path %>">
             <%= image_tag "ror.png" ,class: "curs_img" %>
             <h3>RoR Development</h3>
             <ul class="list-inline">
@@ -375,9 +384,10 @@
           </a>
         </div>
       </div>
+      
       <div class="col-lg-6 col-md-6 col-sm-12 col-12 flex">
         <div class="chs_course_box text-center text-white">
-          <a href="javascript:;">
+          <a href="<%= courses_path %>">
             <%= image_tag "web_design.png" ,class: "curs_img" %>
             <h3>Web Designing</h3>
             <ul class="list-inline">
@@ -423,6 +433,5 @@
         </div>
       </div>
     </div>
-    <a href="#">top</a>
   </div>
 </div>
