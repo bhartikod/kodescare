@@ -1,27 +1,37 @@
 # frozen_string_literal: false
 
 class GeneralInformationController < ApplicationController
+  before_action :authenticate_user!
   def new
-    @general_information = GeneralInformation.new
-    @general_information.current_step = nil
+    if GeneralInformation.exists?(user_id: current_user)
+      redirect_to "/tests/new"
+    else
+    session[:general_information_params] ||= {}
+    @general_information = GeneralInformation.new(session[:general_information_params])
+    @general_information.current_step = params[:step]
+  end
+
   end
 
   def create
-    @general_information = GeneralInformation.new(general_information_params)
+    session[:general_information_params].deep_merge!(params[:general_information]) if params[:general_information]
+    @general_information = GeneralInformation.new(session[:general_information_params])
+    @general_information.user_id = current_user.id
     @general_information.current_step = params[:step]
-    # @general_information.current_step = params[:general_information][:general_information_params]
     if @general_information.valid?
+      
       if params[:back_button]
         @general_information.previous_step
+        render 'new'
       elsif @general_information.second_step?
         @general_information.save
-        redirect_to "/users/sign_up?general_information_id=#{@general_information.id}"
+        flash[:notice] = 'general_info_params saved!' unless @general_information.new_record?
+        redirect_to "/tests/new"
       else
         @general_information.current_step = @general_information.next_step
         render 'new'
       end
     end
-    flash[:notice] = 'general_info_params saved!' unless @general_information.new_record?
   end
 
   private

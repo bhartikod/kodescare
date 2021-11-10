@@ -106,17 +106,25 @@
 					<div class="chs_box_cont">
 						<div class="chs_box_detail">
 							<h4>Full Stack Web Development</h4>
-						<p>Take Ruby to the next level with the Ruby on Rails framework! Learn & gain the confidence to build a product from the ground up using Ruby on Rails (5.x or higher).</p>
-							<a href="<%=courses_detail_path%>">Explore course
-								<%= image_tag "course_icon.png" ,class: "course_icon" %>
-							</a>
+							<p>Take Ruby to the next level with the Ruby on Rails framework! Learn & gain the confidence to build a product from the ground up using Ruby on Rails (5.x or higher).</p>
+	          				<% if user_signed_in? %>
+								<a href="<%=courses_detail_path%>">Explore course
+									<%= image_tag "course_icon.png" ,class: "course_icon" %>
+								</a>
+							<% else %>
+	            				<a href="<%= new_user_session_path %>">Explore course <%= image_tag "course_icon.png", class: "course_icon" %> </a>
+	          				<% end %>
 						</div>
 						<div class="chs_box_detail">
 							<h4>Web Designing</h4>
 						<p>This course takes a deeper look at front-end design. Learn how to design websites that look great on any device and create your own responsive design framework!</p>
-							<a href="<%=designing_detail_path%>">Explore course
-								<%= image_tag "course_icon.png" ,class: "course_icon" %>
-							</a>
+							<% if user_signed_in? %>
+								<a href="<%= designing_detail_path%>">Explore course
+									<%= image_tag "course_icon.png" ,class: "course_icon" %>
+								</a>
+							<% else %>
+	            				<a href="<%= new_user_session_path %>">Explore course <%= image_tag "course_icon.png", class: "course_icon" %> </a>
+	          				<% end %>
 						</div>
 					</div>
 				</div>
@@ -186,16 +194,24 @@
 						<div class="chs_box_detail">
 							<h4>Full Stack Web Development</h4>
 						<p>Take Ruby to the next level with the Ruby on Rails framework! Learn & gain the confidence to build a product from the ground up using Ruby on Rails (5.x or higher).</p>
-							<a href="<%=courses_detail_path%>">Explore course
-								<%=image_tag "course_icon.png" ,class: "course_icon" %>
-							</a>
+							<% if user_signed_in? %>
+								<a href="<%=courses_detail_path%>">Explore course
+									<%= image_tag "course_icon.png" ,class: "course_icon" %>
+								</a>
+							<% else %>
+	            				<a href="<%= new_user_session_path %>">Explore course <%= image_tag "course_icon.png", class: "course_icon" %> </a>
+	          				<% end %>
 						</div>
 						<div class="chs_box_detail">
 							<h4>Web Designing</h4>
 						<p>This course takes a deeper look at front-end design. learn how to design websites that look great on any device and create your own responsive design framework!</p>
-							<a href="<%=designing_detail_path%>">Explore course
-								<%=image_tag "course_icon.png" ,class: "course_icon" %>
-							</a>
+							<% if user_signed_in? %>
+								<a href="<%= designing_detail_path%>">Explore course
+									<%= image_tag "course_icon.png" ,class: "course_icon" %>
+								</a>
+							<% else %>
+	            				<a href="<%= new_user_session_path %>">Explore course <%= image_tag "course_icon.png", class: "course_icon" %> </a>
+	          				<% end %>
 						</div>
 					</div>
 				</div>

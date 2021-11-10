@@ -1,42 +1,60 @@
-<body>
-  <center>
-  <h3>Let's see how prepared you are to go all in!</h3>
-  <h3>Choose your course</h3>
-  <% @general_information.courses.keys.each do |key|%>
-    <%= hidden_field_tag 'step', 'program'  %>
-    <label class="labl">
-    <%= f.radio_button :course, key, :checked => true %>
-    <div><%= @general_information.courses[key] %></div>
-    </label>
-  <%end%>
-  <h3>Are you able to attend 90% of classes?</h3>
-  <label class="labl">
-    <%= f.radio_button :attend, 'yes' %>
-    <div>YES</div>
-  </label>
-  <label class="labl">
-    <%= f.radio_button :attend, 'no' %>
-    <div>NO</div>
-  </label>
-  <h2>How do you want to class in KodeScare</h2>
-  <label class="labl">
-    <%= f.radio_button :class_type, 'OnLine' %>
-    <div>OnLine</div>
-  </label>
-  <label class="labl">
-    <%= f.radio_button :class_type, 'OffLine' %>
-    <div>OffLine</div>
-  </label>
-  <h3>Do you have access to laptop/desktop for the entire duration of the course?</h3>
-  <label class="labl">
-    <%= f.radio_button :is_laptop, 'yes'%>
-    <div>YES</div>
-  </label>
+<div class="page_heading">
+  <h2 class="logo_color text-center">Let's Know Your Preparation Level</h2>
+ </div>
 
-  <label class="labl">
-    <%= f.radio_button :is_laptop, 'no' %>
-    <div>NO</div>
-  </label>
-  <%= f.hidden_field :step, value: "program"%>
-  </center>
-</body>
+<div class="row">
+  <div class="col-lg-8 offset-md-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
+    <div class="form-group radio_btn">
+      <h3>Choose your course:</h3>
+      <% @general_information.courses.keys.each do |key|%>
+        <div class="form-check">
+          <%= hidden_field_tag 'step', 'program'  %>
+            <%= f.radio_button :course, key, :checked => true, class: "form-check-input" %>
+            <label class="form-check-label" >
+              <%= @general_information.courses[key] %>
+            </label>
+        </div>
+      <%end%>
+    </div> 
+  <div class="form-group radio_btn">
+    <h3>Mode of Study:</h3>
+    <div class="form-check">
+      <%= f.radio_button :attend, 'fulltime', :checked => true, class: "form-check-input" %>
+    <label class="form-check-label">Full Time</label>
+  </div>
+<div class="form-check">
+    <%= f.radio_button :attend, 'parttime', class: "form-check-input" %>
+  <label class="form-check-label">Part Time</label>
+</div>
+</div>
+
+<div class="form-group">
+  <h3>Mode of class:</h3>
+  <div class="form-check">
+    <%= f.radio_button :class_type, 'online', :checked => true, class: "form-check-input" %>
+   <label class="form-check-label"> Online </label>
+  </div>
+  <div class="form-check">
+    <%= f.radio_button :class_type, 'offline', class: "form-check-input" %>
+    <label class="form-check-label">Offline</label>
+  </div>
+</div>
+
+<div class="form-group">
+  <h3>Do you have laptop/desktop for course?</h3>
+  <div class="form-check">
+    <%= f.radio_button :is_laptop, 'yes', checked: true, class: "form-check-input"%>
+  <label class="form-check-label">Yes</label>
+</div>
+  <div class="form-check">
+    <%= f.radio_button :is_laptop, 'no', class: "form-check-input" %>
+  <label class="form-check-label">No</label>
+  </div>
+</div>
+  <%#= f.hidden_field :step, value: "program"%>
+  <%= hidden_field_tag 'step', 'program'  %>
+<div class="form-group">
+  <%= f.submit "Continue", class: "btn btn-danger" %>
+</div>
+
+</div>

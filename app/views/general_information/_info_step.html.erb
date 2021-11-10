@@ -1,32 +1,54 @@
- <h2>Let's see how prepared you are to go all in!</h2>
-  <%= hidden_field_tag 'step', 'info'  %>
-  <h3>Date of Birth</h3>
-  <div class="field">
-    <%= f.text_field :dob %>
-   </div><br/>
-  <h2>Gender</h2>
-    <label class="labl">
-    <%= f.select :gender, ['Male', 'Female', 'Other'], prompt: 'Select Gender' %>
-  </label><br/>
-  <h2>12th Passing / Graduation Year</h2>
-   <label class="labl">
-    <%= f.select :graduation_year, ['2010', '2011', '2212', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2023'] , prompt: 'Select' %>
-  </label><br/>
-  <h2>Do you plan to look for full-time work immediately after Kodescare?</h2>
-  <label class="labl">
-   <%= f.radio_button :full_time_work, 'yes'%>
-   <div>YES</div>
-  </label>
-  <label class="labl">
-   <%= f.radio_button :full_time_work, 'no' %>
-   <div>NO</div>
-  </label>
-  <h2>How did you hear of KodeScare?</h2>
-  <label class="labl">
-    <%= f.select :how_hear, ['Facebook', 'Google', 'Instagram', 'YouTube', 'Newspaper', 'Online Article', 'Friend/Family', 'Others', 'None'], prompt: 'Select' %>
-    <%= f.hidden_field :step, value: "info"%>
-  </label>
+  <div class="page_heading">
+    <h2 class="logo_color text-center">Information Request</h2>
+  </div>
 
-  <script >
-    $('#general_information_dob').datepicker()
-   </script>
+<div class="row">
+  <div class="col-lg-8 offset-md-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
+    <%= hidden_field_tag 'step', 'info'  %>
+    <div class="form-group">
+    <h3>Date of Birth:</h3>
+    <div>
+      <%= f.date_field :dob, placeholder: "" %>
+    </div>
+    </div>
+    <div class="form-group">
+      <h3>Gender:</h3>
+      <div>
+        <%= f.select :gender, ['Male', 'Female', 'Other'], prompt: 'Select Gender' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <h3>Graduation Year:</h3>
+      <div>
+        <%= f.select :graduation_year, (Date.today.year-10)..(Date.today.year+5) , prompt: 'Select' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <h3>Are you looking for job immediately after Kodescare?</h3>
+      <div class="form-check">
+        <%= f.radio_button :full_time_work, 'yes', :checked=> true, class: "form-check-input" %>
+        <label class="form-check-label"> Yes </label>
+      </div>
+      <div class="form-check">
+        <%= f.radio_button :full_time_work, 'no', class: "form-check-input" %>
+        <label class="form-check-label">No</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <h3>How did you hear of KodeScare?</h3>
+      <div>
+        <%= f.select :how_hear, ['Facebook', 'Google', 'Instagram', 'YouTube', 'Newspaper', 'Online Article', 'Friend/Family', 'Others', 'None'], prompt: 'Select' %>
+      </div>
+       <%= hidden_field_tag 'step', 'info'  %>
+    </div>
+    <div class="form-group">
+      <%= f.button "Back", :name => "back_button", class: "btn btn-danger" %>
+    </div>
+   <div class="form-group">
+  <%= f.submit "Submit", class: "btn btn-danger" %>
+</div>
+  </div>   
+</div>

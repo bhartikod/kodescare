@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210316191839) do
+ActiveRecord::Schema.define(version: 20211008121447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20210316191839) do
     t.string "is_laptop"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_general_informations_on_user_id"
   end
 
   create_table "options", force: :cascade do |t|
@@ -83,7 +85,6 @@ ActiveRecord::Schema.define(version: 20210316191839) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.bigint "general_information_id"
     t.string "email", default: "", null: false
     t.string "name"
     t.string "select_id_proof"
@@ -98,7 +99,6 @@ ActiveRecord::Schema.define(version: 20210316191839) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["general_information_id"], name: "index_users_on_general_information_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -110,10 +110,10 @@ ActiveRecord::Schema.define(version: 20210316191839) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "general_informations", "users"
   add_foreign_key "options", "questions"
   add_foreign_key "tests", "users"
   add_foreign_key "user_answers", "options"
   add_foreign_key "user_answers", "questions"
   add_foreign_key "user_answers", "tests"
-  add_foreign_key "users", "general_informations"
 end

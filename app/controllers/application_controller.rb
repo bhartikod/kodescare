@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up,
-                                      keys: %i[name id_proof contact_num verification_code general_information_id select_id_proof enter_id_number
+                                      keys: %i[name id_proof contact_num verification_code select_id_proof enter_id_number
                                                document_link])
   end
 
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     redirect_to general_informations_path unless current_user&.general_information
   end
 
-  # After signUp path it's redireact to users/otp/path
+  # After signUp path it's redirect to users/otp/path
   def after_sign_up_path_for(_resource)
     user_otp_path
   end

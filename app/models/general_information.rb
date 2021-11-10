@@ -1,12 +1,11 @@
 # frozen_string_literal: false
 
 class GeneralInformation < ApplicationRecord
-  has_one :user, dependent: :destroy
-
+  belongs_to :user
   attr_accessor :current_step
 
   def courses
-    { '1': 'Full Stack Web(fulltime)', '2': 'Full Stack Web(part time)' }
+    { '1': 'Full Stack Web Web Development', '2': 'Web Designing' }
   end
 
   def current_step
@@ -22,6 +21,7 @@ class GeneralInformation < ApplicationRecord
   end
 
   def previous_step
+
     self.current_step = steps[steps.index(current_step) - 1]
   end
 
@@ -41,10 +41,4 @@ class GeneralInformation < ApplicationRecord
     current_step == steps.last
   end
 
-  # def all_valid?
-  #   steps.all? do |step|
-  #     self.current_step = step
-  #     valid?
-  #   end
-  # end
 end
