@@ -1,21 +1,52 @@
+<div class="container-fluid">
+  <a class="navbar-brand logo_img" href="javascript:;">
+    <%=image_tag "logo.png" ,class: "img-fluid", style: "position: absolute;"%>
+  </a>
+</div>
+<div class="apply_form">
+
 <center>
+
   <%= form_for @user_answer,url: user_answers_path, method: :post  do |f|%><br/><br/>
+  <div align="right"><%= @step + 1 %>/<%= @test.sample_questions.length %> </div>
+
   <%=@question.title %>
-  <%@question.options.each do |option|%>
-   <li>
+  <% if @question.question_type == "SCQ" %>
+
+  <% @question.options.each do |option|%>
+    <br>
     <%=f.label option.value do  %>
-      <%= f.radio_button :option_id, option.id, {:item_wrapper_class => 'inline'}%>
+      <%= f.radio_button :option_id, option.id, multiple: true %>
       <%= option.value %>
     <%end%>
-   </li>
+  
+    <% end %>
+
+   <% elsif @question.question_type == "MCQ"  %>
+
+     <% @question.options.each do |option|%>
+  <br>
+    <%= f.label option.value do  %>   
+      <%= f.check_box :option_id, {multiple: true}, option.id, nil  %>
+      <%= option.value %>
+    <% end%>
+    
+    <% end %>
+  <% else %>
+  <br>
+    <%= f.text_field :text_content %>
+
+   <%# end %>
   <%end%>
-  <%if @step > 0%>
+  <br>
+  <% if @step > 0 %>
    <%= link_to 'Back', back_user_answers_path %>
-   <%end%>
+   <% end %>
   <% if @is_final_step %>
-    <%=f.submit 'Final Submit'%>
-    <%else%>
-    <%=f.submit 'Next'%>
-  <%end%>
- <%end%>
+    <%= f.submit 'Final Submit' %>
+    <% else %>
+    <%= f.submit 'Next' %>
+  <% end %>
+ <% end %>
 </center>
+</div>

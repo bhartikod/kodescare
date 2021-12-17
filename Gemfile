@@ -46,8 +46,8 @@ gem 'font-awesome-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'awesome_print', '~> 1.8'
-gem 'rails_12factor', '~> 0.0.3', group: :production
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'rails_12factor', '~> 0.0.3', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

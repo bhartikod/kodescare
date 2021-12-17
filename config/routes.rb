@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'dashboard#home'
   get 'general_informations', to: 'general_information#new'
   post 'general_informations', to: 'general_information#create'
-
+  resources :questions, only: %i[index]
   resources :tests, only: %i[new create show]
   resources :user_answers, only: %i[index new create] do
     collection do

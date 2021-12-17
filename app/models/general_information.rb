@@ -21,7 +21,6 @@ class GeneralInformation < ApplicationRecord
   end
 
   def previous_step
-
     self.current_step = steps[steps.index(current_step) - 1]
   end
 
@@ -29,16 +28,15 @@ class GeneralInformation < ApplicationRecord
     current_step === steps[1]
   end
 
-  def first_step?
-    current_step === steps.first
-  end
+  # def first_step?
+  #   current_step === steps.first
+  # end
 
-  def is_registration_step?
-    current_step === steps.second
-  end
+  # def is_registration_step?
+  #   current_step === steps.second
+  # end
 
-  def last_step?
-    current_step == steps.last
-  end
-
+  # def last_step?
+  #   current_step == steps.last
+  # end
 end

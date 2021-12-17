@@ -1,6 +1,10 @@
+<br>
+
+
 <center>
- <% @user_answers.each do |user_answer, index|%><br/><br/><br/>
-   <p><%=index  %> - <%= user_answer.option.value%> <%= user_answer.option.correct_option ? 'CORRECT' : 'WRONG' %> <p>
- <%end%>
- <%=@correct_answers*@mark_of_qusetion %> / <%= @user_answers.count * @mark_of_qusetion %>
+  <p> Your ovrall score is = <%= @test.overall_score %>% </p>
+ <%# @user_answers.each do |user_answer, index|%><br/><br/><br/>
+   <p><%#=index  %> - <%#= user_answer.option.value%> <%#= user_answer.option.correct_option ? 'CORRECT' : 'WRONG' %> <p>
+ <%#end%>
+ <%#=@correct_answers*@mark_of_qusetion %> <%#= @user_answers.count * @mark_of_qusetion %>
 </center>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20211008121447) do
+ActiveRecord::Schema.define(version: 20211214142129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20211008121447) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "test_fors", force: :cascade do |t|
+    t.integer "scq"
+    t.integer "mcq"
+    t.integer "text"
+    t.integer "code"
+    t.string "level"
+    t.integer "total_ques"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tests", force: :cascade do |t|
     t.bigint "user_id"
     t.string "status"
@@ -74,17 +85,17 @@ ActiveRecord::Schema.define(version: 20211008121447) do
   create_table "user_answers", force: :cascade do |t|
     t.bigint "test_id"
     t.bigint "question_id"
-    t.bigint "option_id"
     t.string "text_content"
     t.boolean "correct_answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["option_id"], name: "index_user_answers_on_option_id"
+    t.integer "option_id", default: [], array: true
     t.index ["question_id"], name: "index_user_answers_on_question_id"
     t.index ["test_id"], name: "index_user_answers_on_test_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.bigint "general_information_id"
     t.string "email", default: "", null: false
     t.string "name"
     t.string "select_id_proof"
@@ -99,6 +110,7 @@ ActiveRecord::Schema.define(version: 20211008121447) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["general_information_id"], name: "index_users_on_general_information_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -113,7 +125,7 @@ ActiveRecord::Schema.define(version: 20211008121447) do
   add_foreign_key "general_informations", "users"
   add_foreign_key "options", "questions"
   add_foreign_key "tests", "users"
-  add_foreign_key "user_answers", "options"
   add_foreign_key "user_answers", "questions"
   add_foreign_key "user_answers", "tests"
+  add_foreign_key "users", "general_informations"
 end

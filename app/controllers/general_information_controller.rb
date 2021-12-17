@@ -4,13 +4,12 @@ class GeneralInformationController < ApplicationController
   before_action :authenticate_user!
   def new
     if GeneralInformation.exists?(user_id: current_user)
-      redirect_to "/tests/new"
+      redirect_to '/tests/new'
     else
-    session[:general_information_params] ||= {}
-    @general_information = GeneralInformation.new(session[:general_information_params])
-    @general_information.current_step = params[:step]
-  end
-
+      session[:general_information_params] ||= {}
+      @general_information = GeneralInformation.new(session[:general_information_params])
+      @general_information.current_step = params[:step]
+    end
   end
 
   def create
@@ -19,14 +18,14 @@ class GeneralInformationController < ApplicationController
     @general_information.user_id = current_user.id
     @general_information.current_step = params[:step]
     if @general_information.valid?
-      
+
       if params[:back_button]
         @general_information.previous_step
         render 'new'
       elsif @general_information.second_step?
         @general_information.save
         flash[:notice] = 'general_info_params saved!' unless @general_information.new_record?
-        redirect_to "/tests/new"
+        redirect_to '/tests/new'
       else
         @general_information.current_step = @general_information.next_step
         render 'new'
