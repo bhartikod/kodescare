@@ -3,22 +3,22 @@
     <%=image_tag "logo.png" ,class: "img-fluid", style: "position: absolute;"%>
   </a>
 </div>
-<div class="apply_form">
-
 <center>
-
+<div class="apply_form">
   <%= form_for @user_answer,url: user_answers_path, method: :post  do |f|%><br/><br/>
-  <div align="right"><%= @step + 1 %>/<%= @test.sample_questions.length %> </div>
-
+  <div align="right"><%= @step + 1 %>/<%= @user_answer.test.sample_questions.length %> </div>
+   <div class="timer" align="left"></div>
   <%=@question.title %>
+  <br>
   <% if @question.question_type == "SCQ" %>
 
   <% @question.options.each do |option|%>
     <br>
-    <%=f.label option.value do  %>
+
+    <%= f.label :option_id do  %>
       <%= f.radio_button :option_id, option.id, multiple: true %>
-      <%= option.value %>
-    <%end%>
+      <%= f.label :option_id, option.value, :value => option.id %>
+    <% end %>
   
     <% end %>
 
@@ -26,9 +26,9 @@
 
      <% @question.options.each do |option|%>
   <br>
-    <%= f.label option.value do  %>   
+    <%= f.label :option do  %>   
       <%= f.check_box :option_id, {multiple: true}, option.id, nil  %>
-      <%= option.value %>
+      <%= f.label :option_id, option.value, :value => option.id %>
     <% end%>
     
     <% end %>
@@ -48,5 +48,8 @@
     <%= f.submit 'Next' %>
   <% end %>
  <% end %>
+</div>
+
 </center>
+</div>
 </div>

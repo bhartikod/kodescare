@@ -4,27 +4,28 @@
   </a>
 </div>
 <div>
-<% if @invalid_test %>
-  <center><p>You have already submitted test and you need to wait 90 days after test submission to attempt next test</p></center>
+  <% if @invalid_test %>
+    <center><p>You have already submitted test and you need to wait 90 days after test submission to attempt next test</p></center>
   <% else %>
-<center></br>
-  <h1>Kodescare School Test</h1>
-    <%=form_for @test do |f| %><br>
-    <p> Test Competency Level</p>
-      <% @testfors.each do |testfor| %>
-      <br>
-      <%= f.radio_button :status, testfor.level %>
-      <%= testfor.level %>
-    <% end %>  
-    <br>  
-      <%= f.submit 'Start Test', disabled: true %>
+    <center></br>
+    <h1>Kodescare School Test</h1>
+    <div class="apply-form">
+      <%=form_for @test do |f| %><br>
+        <h3> <b><u>Please Select Test Competency Level </u></h3>
+        <br>
+        <% @testfors.each do |testfor| %>
+          <%= f.radio_button :status, testfor.level %>
+          <%= f.label :status, :value => testfor.level %>
+        <% end %>
+        <br>  
+        <%= f.submit 'Start Test', disabled: true %>
+      <% end %>
+    </div>
+    </center>
   <% end %>
- </center>
-<% end %>
 </div>
 
 <script>
-
 $(function(){
     $("input[type='radio']").change(function(){
 

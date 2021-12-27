@@ -19,7 +19,6 @@ question_list = [
   ['ques8 for proficient text', false, 3, 3],
   ['ques9 for expert scq', false, 1, 4],
   ['ques10 for expert mcq', true, 2, 4]
-
 ]
 question_list.each do |title, active_question, question_type, level_id|
   Question.create(title: title, active_question: active_question, question_type: question_type, level_id: level_id)

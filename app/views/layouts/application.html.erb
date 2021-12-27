@@ -136,10 +136,4 @@ var interval = setInterval(function() {
 <% end %>
   </script>
 </html>
-<%if user_signed_in? %>
-    <span class="pull-right"><%=link_to "Logout", destroy_user_session_path, :method => :delete%></span>
-    <%else%>
-   <br />
-  <%end%>
-
   
